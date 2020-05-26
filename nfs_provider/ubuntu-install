@@ -1,0 +1,10 @@
+#install nfs-server
+sudo apt install nfs-kernel-server
+sudo start nfs-server
+
+#exporting our directory
+sudo vi /etc/exports
+/srv/nfs/mydata  *(rw,sync,no_subtree_check,no_root_squash,insecure)
+
+sudo exportfs -rav
+
